@@ -45,4 +45,24 @@ const person1 = new Person({ name: 'John Doe', age: 30 });
 const person2 = new Person({ name: 'Alice', age: 25 });
 
 
+// Problem 4
+type Item = {
+  title: string;
+  rating: number;
+};
+const filterByRating = (items: Item[]): Item[] => {
+  return items.reduce((acc: Item[], item) => {
+    if (item.rating >= 4) {
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+}
+const books = [
+  { title: 'Book A', rating: 4.5 },
+  { title: 'Book B', rating: 3.2 },
+  { title: 'Book C', rating: 5.0 },
+];
+
+
 
