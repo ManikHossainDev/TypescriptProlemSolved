@@ -23,3 +23,26 @@ const getLength = (value: string | any[]): number => {
     return 0;
 };
 
+
+// Problem 3
+type PersonParams = {
+  name: string;
+  age: number;
+};
+class Person {
+  name: string;
+  age: number;
+  constructor({ name, age }: PersonParams) {
+    this.name = name;
+    this.age = age;
+  }
+  getDetails(): string  {
+    const person = `'Name: ${this.name}, Age: ${this.age}'`;
+    return person;
+  }
+}
+const person1 = new Person({ name: 'John Doe', age: 30 });
+const person2 = new Person({ name: 'Alice', age: 25 });
+
+
+
