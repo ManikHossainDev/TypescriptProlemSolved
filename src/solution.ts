@@ -101,3 +101,29 @@ const itIsBook: TBook = {
   isAvailable: true
 };
 // printBookDetails(itIsBook);
+
+
+// Problem 7
+type Value = string | number;
+type ValueArray = Value[];
+const getUniqueValues = (array1: ValueArray , array2: ValueArray ): ValueArray  => {
+  const Combined: ValueArray  = [...array1, ...array2];
+  const Unique: ValueArray  = [];
+  for (let i = 0; i < Combined.length; i++) {
+    const value = Combined[i]; 
+    let exists = false;
+    for (let j = 0; j < Unique.length; j++) {
+      if (Unique[j] === value) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists && value !== undefined &&  value !== null) {
+      Unique.push(value);
+    }
+  }
+  return Unique;
+}
+const array1: ValueArray = [1, 2, 3, 4, 5];
+const array2: ValueArray = [3, 4, 5, 6, 7];
+
