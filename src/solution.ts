@@ -81,6 +81,7 @@ const users = [
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
+
 // Problem 6
 type TBook = {
   title: string;
@@ -101,3 +102,56 @@ const itIsBook: TBook = {
   isAvailable: true
 };
 // printBookDetails(itIsBook);
+
+
+
+
+// Problem 7
+type Value = string | number;
+type ValueArray = Value[];
+const getUniqueValues = (array1: ValueArray , array2: ValueArray ): ValueArray  => {
+  const Combined: ValueArray  = [...array1, ...array2];
+  const Unique: ValueArray  = [];
+  for (let i = 0; i < Combined.length; i++) {
+    const value = Combined[i]; 
+    let exists = false;
+    for (let j = 0; j < Unique.length; j++) {
+      if (Unique[j] === value) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists && value !== undefined &&  value !== null) {
+      Unique.push(value);
+    }
+  }
+  return Unique;
+}
+const array1: ValueArray = [1, 2, 3, 4, 5];
+const array2: ValueArray = [3, 4, 5, 6, 7];
+
+
+// Problem 8 
+interface TProduct  {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number; 
+};
+const calculateTotalPrice = (products: TProduct[]): number => {
+  if (products.length === 0) return 0;
+  return products
+    .map((p) => {
+      const total = p.price * p.quantity;
+      const discountAmount = p.discount ? total * (p.discount / 100) : 0;
+      return total - discountAmount;
+    })
+    .reduce((sum, current) => sum + current, 0);
+}
+
+const products = [
+  { name: "Pen", price: 10, quantity: 2 },
+  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
+  { name: "Bag", price: 50, quantity: 1, discount: 20 },
+];
+// console.log(calculateTotalPrice(products));
