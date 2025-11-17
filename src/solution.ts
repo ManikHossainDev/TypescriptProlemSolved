@@ -11,7 +11,9 @@ const formatValue = (value:TValue ):TValue => {
     return !value;
   }
 }
-
+// console.log(formatValue("hello"));
+// console.log(formatValue(5));
+// console.log(formatValue(true));
 
 // Problem 2
 const getLength = (value: string | any[]): number => {
@@ -22,6 +24,8 @@ const getLength = (value: string | any[]): number => {
     }
     return 0;
 };
+// console.log(getLength("typescript"));
+// console.log(getLength([10, 20, 30, 40]));
 
 
 // Problem 3
@@ -43,6 +47,9 @@ class Person {
 }
 const person1 = new Person({ name: 'John Doe', age: 30 });
 const person2 = new Person({ name: 'Alice', age: 25 });
+// console.log(person1.getDetails());
+// console.log(person1.getDetails());
+
 
 
 // Problem 4
@@ -63,6 +70,8 @@ const books = [
   { title: 'Book B', rating: 3.2 },
   { title: 'Book C', rating: 5.0 },
 ];
+// console.log(filterByRating(books))
+
 
 
 // Problem 5
@@ -80,6 +89,8 @@ const users = [
   { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
+// console.log(filterActiveUsers(users));
+
 
 
 // Problem 6
@@ -102,7 +113,6 @@ const itIsBook: TBook = {
   isAvailable: true
 };
 // printBookDetails(itIsBook);
-
 
 
 
@@ -129,6 +139,8 @@ const getUniqueValues = (array1: ValueArray , array2: ValueArray ): ValueArray  
 }
 const array1: ValueArray = [1, 2, 3, 4, 5];
 const array2: ValueArray = [3, 4, 5, 6, 7];
+// console.log(getUniqueValues(array1, array2))
+
 
 
 // Problem 8 
@@ -148,7 +160,6 @@ const calculateTotalPrice = (products: TProduct[]): number => {
     })
     .reduce((sum, current) => sum + current, 0);
 }
-
 const products = [
   { name: "Pen", price: 10, quantity: 2 },
   { name: "Notebook", price: 25, quantity: 3, discount: 10 },
