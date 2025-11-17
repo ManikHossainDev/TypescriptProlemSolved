@@ -119,11 +119,24 @@ const itIsBook: TBook = {
 // Problem 7
 type Value = string | number;
 type ValueArray = Value[];
-const getUniqueValues = (array1: ValueArray , array2: ValueArray ): ValueArray  => {
-  const Combined: ValueArray  = [...array1, ...array2];
-  const Unique: ValueArray  = [];
+const getUniqueValues = (array1: ValueArray, array2: ValueArray): ValueArray => {
+  const Combined: ValueArray = [];
+  for (let i = 0; i < array1.length; i++) {
+    const box = array1[i];
+    if (box !== undefined) {
+      Combined[Combined.length] = box;
+    }
+  }
+  for (let i = 0; i < array2.length; i++) {
+    const box = array2[i];
+    if (box !== undefined) {
+      Combined[Combined.length] = box;
+    }
+  }
+  const Unique: ValueArray = [];
   for (let i = 0; i < Combined.length; i++) {
-    const value = Combined[i]; 
+    const value = Combined[i];
+    if (value === undefined) continue
     let exists = false;
     for (let j = 0; j < Unique.length; j++) {
       if (Unique[j] === value) {
@@ -131,15 +144,15 @@ const getUniqueValues = (array1: ValueArray , array2: ValueArray ): ValueArray  
         break;
       }
     }
-    if (!exists && value !== undefined &&  value !== null) {
-      Unique.push(value);
+    if (!exists) {
+      Unique[Unique.length] = value;
     }
   }
   return Unique;
-}
+};
 const array1: ValueArray = [1, 2, 3, 4, 5];
 const array2: ValueArray = [3, 4, 5, 6, 7];
-// console.log(getUniqueValues(array1, array2))
+console.log(getUniqueValues(array1, array2))
 
 
 
