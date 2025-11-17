@@ -152,7 +152,7 @@ const getUniqueValues = (array1: ValueArray, array2: ValueArray): ValueArray => 
 };
 const array1: ValueArray = [1, 2, 3, 4, 5];
 const array2: ValueArray = [3, 4, 5, 6, 7];
-console.log(getUniqueValues(array1, array2))
+// console.log(getUniqueValues(array1, array2))
 
 
 
