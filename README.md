@@ -1,4 +1,5 @@
 # Typescript Problem Solved
+
 1) What are some differences between interfaces and types in TypeScript?
     Interface এবং Type–এর মধ্যে পার্থক্য ঠিক যেমন দুইজন আলাদা চরিত্র। Interface হলো strict অফিস-বস, যার নিয়ম মেনে কাজ করতে হয়। এটি শুধু object-এর structure ঠিক রাখে এবং discipline maintain করে। অন্যদিকে Type হলো chill guy, যেখানে তুমি union, tuple, primitive—সবকিছু assign করতে পারো। Type বেশি flexible, কিন্তু একই নামে আবার declare করা যায় না। সহজভাবে বলতে গেলে, Interface rigid, Type flexible।
 
